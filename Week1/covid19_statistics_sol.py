@@ -22,7 +22,7 @@ print('| ------ | ---------- | --------- |')
 for idx, pop in enumerate(n_people):
     ratio = pop / sum_people * 100
     print('| %s | %d | %.1f |' % (regions[idx], pop, ratio))
-print()
+print('')
 
 # TODO) Print COVID-19 new cases by region
 
