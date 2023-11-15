@@ -1,12 +1,13 @@
 import numpy as np
-from sklearn import (datasets, tree, model_selection)
+from sklearn import (datasets, ensemble, model_selection)
 
 if __name__ == '__main__':
     # Load a dataset
     wdbc = datasets.load_breast_cancer()
 
     # Train a model
-    model = tree.DecisionTreeClassifier() # TODO
+    #model = tree.DecisionTreeClassifier(max_depth=5) # TODO
+    model = ensemble.RandomForestClassifier(n_estimators=100, max_depth=20, random_state=2)
     cv_results = model_selection.cross_validate(model, wdbc.data, wdbc.target, cv=5, return_train_score=True)
 
     # Evaluate the model
